@@ -1,5 +1,9 @@
 #1
+<<<<<<< HEAD
 print("Welcome to Python from Alan")
+=======
+print("Welcome to Python")
+>>>>>>> 201a7783753195ebf9378cc464e5b1e2622d63a6
 print("Welcome to Computer Science")
 print("Programming is fun")
 
