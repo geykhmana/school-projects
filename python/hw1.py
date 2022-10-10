@@ -1,6 +1,6 @@
 #1
 print("Welcome to Python from Alan")
-print("Welcome to Computer Science")
+print("Welcome to Computer Science from develop_alan branch")
 print("Programming is fun")
 
 #2
