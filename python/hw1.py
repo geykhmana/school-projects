@@ -1,7 +1,7 @@
 #1
 print("Welcome to Python from Alan")
 print("Welcome to Computer Science from develop_alan branch")
-print("Programming is fun")
+print("Programming is fun from develop branch")
 
 #2
 print((9.5 * 4.5 - 2.5 * 3) / (45.5 - 3.5))
