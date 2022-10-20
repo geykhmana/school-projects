@@ -17,7 +17,6 @@ def playGame():
     randomNumber = random.randint(1, 50)
     numberOfGuesses = 0
     print("Guess a number between 1 and 50")
-    i = 1
     while numberOfGuesses < 11:
         guess = int(input("\nEnter the number that you think is correct: "))
         numberOfGuesses += 1;
