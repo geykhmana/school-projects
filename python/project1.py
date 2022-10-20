@@ -9,12 +9,14 @@ def playgame():
     while(numberOfGuesses < 11):
         guess = int(input("Enter the number that you think is correct: "))
         if (guess == randomNumber):
-            print("Congratulations, you guessed the correct number randomNumber in", numberOfGuesses, "guesses!\n")
+            print("Congratulations, you guessed the correct number", randomNumber, "in", numberOfGuesses, "guesses!")
             break
         elif(guess < randomNumber):
             print("Your guess of", guess, "was too low")
         elif (guess > randomNumber):
             print("Your guess of", guess, "was too high")
         numberOfGuesses += 1;
-        if (numberOfGuesses == GUESSES):
+        if (numberOfGuesses == 10):
             print("You did not guess the right number. The correct number was", randomNumber)
+
+playgame()
