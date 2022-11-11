@@ -1,5 +1,3 @@
-import random
-
 #1
 a = 0
 sum = 0
