@@ -53,19 +53,28 @@ responses = {
         "Yes, I am just a bot."
     ],
 
-    #
-    # YOUR CODE FOR TOPICS & RESPONSES HERE
-    #
+    "what's your favorite color?" : [
+        "My favorite color is green. I think it's calming.",
+        "I like blue cuz it's chill and stuff.",
+        "idk, you tell me i'm just a robot or whatever."
+    ],
+
+    "what's your favorite color?" : [
+        "My favorite color is green. I think it's calming.",
+        "I like blue cuz it's chill and stuff.",
+        "idk, you tell me i'm just a robot or whatever."
+    ],
 
     "": [
         "Hey! Are you there?",
         "You know you can't just sit there silently like that!",
-        ""
+        "Sorry, I can't speak mute."
     ],
 
     "default" : [
         "I'm not sure what that means.",
-        # ADD TWO MORE RESPONES
+        "OK, you might want to ask something else or spell better lol",
+        "Sorry, I spaced out. What did you say again?"
     ]
 
 }
@@ -73,20 +82,20 @@ responses = {
 """
 STEP 3
 Create related() function to find related text
-Use temp_text for unedited user response and final_text for modified user_response
+Use temptext for unedited user response and finaltext for modified userresponse
 """
 
-def related(temp_text):
-    if "name" in temp_text:
-        final_text = "what's your name?"
-    elif "robot" in temp_text:
-        final_text = "are you a bot?"
+def related(temptext):
+    if "name" in temptext:
+        finaltext = "what's your name?"
+    elif "robot" in temptext:
+        finaltext = "are you a bot?"
 
     #
     # YOUR CODE HERE
     #
 
     else:
-        final_text = temp_text
-    return final_text
+        finaltext = temptext
+    return finaltext
 
