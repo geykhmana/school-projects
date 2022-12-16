@@ -21,6 +21,8 @@ username = input("What is your name?")
 
 print("It is a pleasure to meet you", username, " I would like to get to know you better.")
 
+userresponse = input("Ask me a question: ")
+
 
 # Variables for bot and user templates - edit with your bot's name!
 
@@ -59,16 +61,28 @@ responses = {
         "idk, you tell me i'm just a robot or whatever."
     ],
 
-    "what's your favorite color?" : [
-        "My favorite color is green. I think it's calming.",
-        "I like blue cuz it's chill and stuff.",
-        "idk, you tell me i'm just a robot or whatever."
+    "what do you do in your free time?" : [
+        "I like to contemplate the significance of the existence of the universe.",
+        "I chill and stuff.",
+        "Oh I'm totally a Star Trek superfan and I constantly collect merch and make a references when I talk to anyone..."
+    ],
+
+    "do you like sauce?" : [
+        "What the hell kinda question is that? Why would you put that on your Python Project? Are you really THAT out of ideas?",
+        "Yeah it's good.",
+        "Define sauce for me, please..."
     ],
 
     "": [
         "Hey! Are you there?",
         "You know you can't just sit there silently like that!",
         "Sorry, I can't speak mute."
+    ],
+
+    "stop": [
+        "OK, goodbye",
+        "Farewell, friend.",
+        "Fine, then. Bye."
     ],
 
     "default" : [
@@ -88,14 +102,25 @@ Use temptext for unedited user response and finaltext for modified userresponse
 def related(temptext):
     if "name" in temptext:
         finaltext = "what's your name?"
-    elif "robot" in temptext:
+    elif "robot" in temptext or "bot" in temptext:
         finaltext = "are you a bot?"
-
-    #
-    # YOUR CODE HERE
-    #
-
+    elif "color" in temptext:
+        finaltext = "what's your favorite color?"
+    elif "free time" in temptext or "freetime" in temptext:
+        finaltext = "what do you do in your free time?"
+    elif "sauce" in temptext:
+        finaltext = "do you like sauce?"
+    elif "stop" in temptext or "end" in temptext:
+        finaltext = "stop"
     else:
-        finaltext = temptext
-    return finaltext
+        finaltext = "default"
 
+    a = random.randint(0, 2)
+    return responses[finaltext][a]
+
+while True:
+    thingtoprint = related(userresponse)
+    print(thingtoprint)
+    userresponse = input()
+    if thingtoprint == "OK, goodbye" or thingtoprint == "Farewell, friend." or thingtoprint == "Fine, then. Bye.":
+        break
