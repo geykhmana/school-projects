@@ -121,6 +121,6 @@ def related(temptext):
 while True:
     thingtoprint = related(userresponse)
     print(thingtoprint)
-    userresponse = input()
     if thingtoprint == "OK, goodbye" or thingtoprint == "Farewell, friend." or thingtoprint == "Fine, then. Bye.":
         break
+    userresponse = input()
