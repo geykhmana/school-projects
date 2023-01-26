@@ -3,7 +3,7 @@
 //
 // Purpose: Print two messages
 // ************************************************************
-package lab1.lab1;
+package lab1;
 
 public class CSYes {
     public static void main(String[] args) {
