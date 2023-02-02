@@ -12,5 +12,8 @@ public class conversion {
         String name = "Java";
         System.out.println(balance);
         System.out.println(keys);
+        long y = 40002;      //y: 40002
+        short x = (short) y; //x: -25534
+        System.out.println(x);
     }
 }
