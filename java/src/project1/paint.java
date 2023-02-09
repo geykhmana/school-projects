@@ -7,8 +7,8 @@ public class paint {
         int length;
         int width;
         int height; //declare integers length, width, and height;
-//declare double totalSqFt;
-//declare double paintNeeded;
+        double totalSqFt; //declare double totalSqFt;
+        double paintNeeded; //declare double paintNeeded;
 //declare and initialize Scanner object
 //Prompt for and read in the length of the room
 //Prompt for and read in the width of the room
