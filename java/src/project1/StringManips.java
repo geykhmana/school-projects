@@ -1,4 +1,4 @@
-package lab1;
+package project1;
 
 import java.util.Scanner;
 public class StringManips
