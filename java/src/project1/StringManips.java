@@ -40,6 +40,6 @@ public class StringManips
         city = citystate.nextLine();
         System.out.println("Enter your state: ");
         state = citystate.nextLine();
-        System.out.println(state.toUpperCase()+city.toLowerCase()+state.toUpperCase());
+        System.out.println(state.toUpperCase() + city.toLowerCase() + state.toUpperCase());
     }
 }
