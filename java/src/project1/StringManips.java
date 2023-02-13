@@ -21,6 +21,7 @@ public class StringManips
 // concatenate the firstHalf at the end of the secondHalf
         middle3 = phrase.substring(middleIndex-1, middleIndex+2);
         switchedPhrase = secondHalf.concat(firstHalf);
+        switchedPhrase = switchedPhrase.replaceAll(" ", "*"); // replace all spaces with asterisks
 // print information about the phrase
         System.out.println();
         System.out.println ("Original phrase: " + phrase);
