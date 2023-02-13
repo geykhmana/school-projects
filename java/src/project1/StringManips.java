@@ -10,14 +10,16 @@ public class StringManips
         int middleIndex; // index of the middle character in the String
         String firstHalf; // first half of the phrase String
         String secondHalf; // second half of the phrase String
-        String switchedPhrase; //a new phrase with original halves switched
+        String switchedPhrase; // a new phrase with original halves switched
 // compute the length and middle index of the phrase
+        String middle3; // the middle 3 characters of "phrase"
         phraseLength = phrase.length();
         middleIndex = phraseLength / 2;
 // get the substring for each half of the phrase
         firstHalf = phrase.substring(0,middleIndex);
         secondHalf = phrase.substring(middleIndex, phraseLength);
 // concatenate the firstHalf at the end of the secondHalf
+        middle3 = phrase.substring(middleIndex-1, middleIndex+2);
         switchedPhrase = secondHalf.concat(firstHalf);
 // print information about the phrase
         System.out.println();
@@ -28,6 +30,6 @@ public class StringManips
         System.out.println ("Character at the middle index: " +
                 phrase.charAt(middleIndex));
         System.out.println ("Switched phrase: " + switchedPhrase);
-        System.out.println();
+        System.out.println("Middle 3 characters: " + middle3);
     }
 }
