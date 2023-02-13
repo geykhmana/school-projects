@@ -32,5 +32,14 @@ public class StringManips
                 phrase.charAt(middleIndex));
         System.out.println ("Switched phrase: " + switchedPhrase);
         System.out.println("Middle 3 characters: " + middle3);
+        // Part 3 below:
+        String city;
+        String state;
+        Scanner citystate = new Scanner(System.in);
+        System.out.println("Enter your city: ");
+        city = citystate.nextLine();
+        System.out.println("Enter your state: ");
+        state = citystate.nextLine();
+        System.out.println(state.toUpperCase()+city.toLowerCase()+state.toUpperCase());
     }
 }
