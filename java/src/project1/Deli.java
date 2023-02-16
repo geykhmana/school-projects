@@ -9,15 +9,13 @@ package project1;
 //
 // ************************************************************
 import java.util.Scanner;
-public class Deli
-{
+public class Deli {
     // ---------------------------------------------------
 // main reads in the price per pound of a deli item
 // and number of ounces of a deli item then computes
 // the total price and prints a "label" for the item
 // ---------------------------------------------------
-    public static void main (String[] args)
-    {
+    public static void main (String[] args) {
         final double OUNCES_PER_POUND = 16.0;
         double pricePerPound; // price per pound
         double weightOunces; // weight in ounces
