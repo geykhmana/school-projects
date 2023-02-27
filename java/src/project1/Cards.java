@@ -1,6 +1,6 @@
 package project1;
 
-public class cards {
+public class Cards {
     enum Rank {
         ace,
         two,
