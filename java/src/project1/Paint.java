@@ -1,7 +1,7 @@
 package project1;
 
 import java.util.Scanner;
-public class paint {
+public class Paint {
     public static void main(String[] args) {
         final int COVERAGE = 350; //paint covers 350 sq ft/gal
         int length;
