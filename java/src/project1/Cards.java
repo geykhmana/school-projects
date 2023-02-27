@@ -15,7 +15,7 @@ public class Cards {
             ten,
             jack,
             queen,
-            king,
+            king
         }
         Rank highCard = Rank.ace;
         Rank faceCard = Rank.king;
