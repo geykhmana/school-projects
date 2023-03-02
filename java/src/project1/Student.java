@@ -34,9 +34,9 @@ public class Student {
         return (test1+test2) / 2;
     }
         // ---------------------------------------------
-    //printName: print the student’s name
+    //getName: print the student’s name
     // ---------------------------------------------
-    public String printName{
-        System.out.println("The student's name is " + name + ".");
+    public String getName() {
+        return name;
     }
 }
