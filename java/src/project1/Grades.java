@@ -15,7 +15,7 @@ public class Grades {
         student1.inputGrades();
         student2.inputGrades();
 
-        System.out.println(student1.getName() + "'s average test score is " + student1.getAverage() + ".");
-        System.out.println(student2.getName() + "'s average test score is " + student2.getAverage() + ".");
+        System.out.println(student1);
+        System.out.println(student2);
     }
 }

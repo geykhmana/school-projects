@@ -39,4 +39,8 @@ public class Student {
     public String getName() {
         return name;
     }
+    public String toString() {
+        String output = "Name: "+ name + " Test1: " + test1 + " Test2: " + test2;
+        return output;
+    }
 }
