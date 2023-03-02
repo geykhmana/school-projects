@@ -30,7 +30,7 @@ public class Student {
     }
         // ---------------------------------------------
     //getAverage: compute and return the student’s test average
-    public double getAverage(int test1, int test2) {
+    public double getAverage() {
         return (test1+test2) / 2;
     }
         // ---------------------------------------------
