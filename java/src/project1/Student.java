@@ -9,31 +9,34 @@ package project1;
 import java.util.Scanner;
 public class Student {
     //declare instance data
-    // ---------------------------------------------
+    private String name;
+    private int test1 = 0;
+    private int test2 = 0;
     //constructor
     // ---------------------------------------------
     public Student(String studentName) {
-    //add body of constructor
+        name = studentName;
     }
         // ---------------------------------------------
     //inputGrades: prompt for and read in student’s grades for test1 and test2.
     //Use name in prompts, e.g., "Enter’s Joe’s score for test1".
     // ---------------------------------------------
-        public void inputGrades() {
-    //add body of inputGrades
-        }
+    public void inputGrades() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter " + name + "'s score for test1: ");
+        test1 = scan.nextInt();
+        System.out.println("Enter " + name + "'s score for test2: ");
+        test2 = scan.nextInt();
+    }
         // ---------------------------------------------
     //getAverage: compute and return the student’s test average
-    // ---------------------------------------------
-    //add header for getAverage
-        {
-    //add body of getAverage
-        }
+    public double getAverage(int test1, int test2) {
+        return (test1+test2) / 2;
+    }
         // ---------------------------------------------
-    //getName: print the student’s name
+    //printName: print the student’s name
     // ---------------------------------------------
-    //add header for printName
-        {
-    //add body of printName
-        }
+    public String printName{
+        System.out.println("The student's name is " + name + ".");
+    }
 }
