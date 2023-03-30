@@ -20,33 +20,32 @@ public class Item {
     // -------------------------------------------------------
     // Return a string with the information about the item
     // -------------------------------------------------------
-    public String toString () {
+    public String toString() {
         NumberFormat fmt = NumberFormat.getCurrencyInstance();
         String item;
-        if (name.length () >= 8) {
+        if (name.length() >= 8) {
             item = name + "\t";
-        }
-        else {
+        } else {
             item = name + "\t\t";
         }
-        return (item + " " + fmt.format(price) + "\t " + quantity + "\t\t" + fmt.format(price * quantity ));
+        return (item + " " + fmt.format(price) + "\t " + quantity + "\t\t" + fmt.format(price * quantity));
     }
     // -------------------------------------------------
     // Returns the unit price of the item
     // -------------------------------------------------
-    public double getPrice () {
+    public double getPrice() {
         return price;
     }
     // -------------------------------------------------
     // Returns the name of the item
     // -------------------------------------------------
-    public String getName () {
+    public String getName() {
         return name;
     }
     // -------------------------------------------------
     // Returns the quantity of the item
     // -------------------------------------------------
-    public int getQuantity () {
+    public int getQuantity() {
         return quantity;
     }
 }
