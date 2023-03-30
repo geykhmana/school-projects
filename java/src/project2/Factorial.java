@@ -1,6 +1,8 @@
 package project2;
+// ************************************************************
 // Factorial.java
-
+// Computes the factorial of a given integer
+// ************************************************************
 import java.util.Scanner;
 
 public class Factorial {
