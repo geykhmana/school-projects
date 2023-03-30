@@ -13,10 +13,10 @@ public class Factorial {
         System.out.print("Enter a nonnegative integer: ");
         num = scan.nextInt();
         int printnum = num;
-        if (num == 0 || num == 1) {
+        if (num == 0) {
             answer = 1;
         } else {
-            while (num > 1) {
+            while (num > 0) {
                 answer *= num;
                 num--;
             }
