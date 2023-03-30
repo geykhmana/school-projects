@@ -8,7 +8,7 @@ import java.text.NumberFormat;
 public class Salary {
     public static void main (String[] args) {
         double currentSalary; // current annual salary
-        int rating; // performance rating
+        //int rating; // performance rating
         double raise = 0; // dollar amount of the raise
         double newSalary; // new salary for the employee
 
@@ -18,14 +18,22 @@ public class Salary {
         System.out.print("Enter the current salary: ");
         currentSalary = scan.nextDouble();
         System.out.println("Enter the employee's rating: ");
-        rating = scan.nextInt();
+        //rating = scan.nextInt();
+        String rating = scan.next();
 
         // Compute the raise -- Use if ... else ...
-        if (rating == 1) {
+        /*if (rating == 1) {
             raise = currentSalary * 0.06;
         } else if (rating == 2) {
             raise = currentSalary * 0.04;
         } else if (rating == 3) {
+            raise = currentSalary * 0.015;
+        }*/
+        if (rating.equals("Excellent")) {
+            raise = currentSalary * 0.06;
+        } else if (rating.equals("Good")) {
+            raise = currentSalary * 0.04;
+        } else if (rating.equals("Poor")) {
             raise = currentSalary * 0.015;
         }
         newSalary = currentSalary + raise;
