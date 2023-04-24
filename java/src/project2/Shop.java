@@ -20,13 +20,13 @@ public class Shop {
         String keepShopping = "y";
         do {
             System.out.print("Enter the name of the item: ");
-            itemName = scan.nextLine ();
+            itemName = scan.nextLine();
             System.out.print("Enter the unit price: ");
             itemPrice = scan.nextDouble();
             System.out.print("Enter the quantity: ");
             quantity = scan.nextInt();
             // *** create a new item and add it to the cart
-            Item item1 = new Item(itemName,itemPrice,quantity);
+            Item item1 = new Item(itemName, itemPrice, quantity);
             cart[i] = item1;
             // *** print the contents of the cart object using println
             for (int j=0;j<=i;j++) {
