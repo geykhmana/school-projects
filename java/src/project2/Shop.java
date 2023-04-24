@@ -10,7 +10,6 @@ import java.util.Scanner;
 
 public class Shop {
     public static void main(String[] args) {
-        Item item;
         String itemName;
         double itemPrice;
         int quantity;
@@ -30,7 +29,9 @@ public class Shop {
             Item item1 = new Item(itemName,itemPrice,quantity);
             cart[i] = item1;
             // *** print the contents of the cart object using println
-            System.out.println(item1);
+            for (int j=0;j<=i;j++) {
+                System.out.println(cart[j]);
+            }
             System.out.println("Continue shopping (y/n)? ");
             keepShopping = scan.nextLine();
             i++;
