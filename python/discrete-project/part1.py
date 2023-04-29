@@ -1,23 +1,22 @@
 def findPrimes(a, b):
-    primetest = a
-    i = 0
-    primelist = []
+    primetest = a   #primetest is each number in the range [a,b] that will be tested to see it it's prime
+    i = 0           #index of list of prime numbers
+    primelist = []  #list of prime numbers
     while primetest <= b:
-        isprime = True
-        divisor = 2
-        while divisor < primetest:
+        isprime = True  #number is assumed to be prime because 1 & 2 can't be tested, so they are automatically added to primelist
+        divisor = 2     #lowest divisor tested is 2 because every number is divisible by 1
+        while divisor < primetest:  #loop stops at 2 possible conditions: all divisors from 2 to primetest-1 are tested...
             if primetest % divisor == 0:
-                primetest += 1
-                divisor = 2
                 isprime = False
-                continue
+                primetest += 1
+                break               #...or the number has been found to not be prime
             else:
                 divisor += 1
-        if isprime == True:
+        if isprime == True:         #code in this condition runs unless number is not prime
             primelist.insert(i, primetest)
             i += 1
             primetest += 1
-    print("\nThe prime numbers between these two numbers are:")
+    print("\nThe prime numbers between these two numbers are:") #printing the prime numbers
     for x in primelist:
         print(x, end=" ")
 
