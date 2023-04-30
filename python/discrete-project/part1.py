@@ -12,6 +12,9 @@ def findPrimes(a, b):
                 break               #...or the number has been found to not be prime
             else:
                 divisor += 1
+        if primetest == 1:
+            primetest += 1
+            continue         #since 1 is not a prime number, it is disqualified here
         if isprime == True:         #code in this condition runs unless number is not prime
             primelist.insert(i, primetest)
             i += 1
