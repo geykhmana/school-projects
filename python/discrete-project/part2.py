@@ -25,6 +25,7 @@ def btd():
 while True:
     choice = input("\nWould you like to convert a decimal number to binary or a binary number to decimal?\n(Type dtb for decimal to binary, btd for binary to decimal, or \"quit\" if you would like to quit the program: ")
     if choice == "quit":
+        print("Goodbye!")
         break
     elif choice == "dtb":
         print(dtb())
