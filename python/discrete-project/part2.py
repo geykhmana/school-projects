@@ -7,18 +7,18 @@ def dtb():
         return 0
     elif dec > 0:
         while(dec):
-            bin += str(dec&1)
-            dec = dec >> 1
-        bin = bin[::-1]
+            bin += str(dec&1)   #turns dec var into string
+            dec = dec >> 1      #bitwise shift
+        bin = bin[::-1]         #reverses order of chars
         return bin
 def btd():
     bin = int(input("\nEnter the binary number you would like to convert: "))
     dec = 0
-    binstr = str(bin)
+    binstr = str(bin)           #turns dec var into string
     i = 0
-    for x in binstr[::-1]:
+    for x in binstr[::-1]:      #reverses order of chars
         if x == "1":
-            dec += 2**i
+            dec += 2**i         #if a 1 is encountered, 2 to the power of the correct place is added to dec
         i += 1
     return dec
 
