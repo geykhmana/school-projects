@@ -9,6 +9,9 @@ public class Advice extends Thought {
       System.out.println();
       super.message();  // explicitly invokes the parent's version
    }
+   //-----------------------------------------------------------------
+   //  Overloading example below
+   //-----------------------------------------------------------------
    public void message(String content) {
       System.out.println(content);
 
