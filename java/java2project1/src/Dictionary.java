@@ -14,14 +14,14 @@ public class Dictionary extends Book {
         return (double) definitions/pages;
     }
     //----------------------------------------------------------------
-// Definitions mutator.
-//----------------------------------------------------------------
+    // Definitions mutator.
+    //----------------------------------------------------------------
     public void setDefinitions (int numDefinitions) {
         definitions = numDefinitions;
     }
     //----------------------------------------------------------------
-// Definitions accessor.
-//----------------------------------------------------------------
+    // Definitions accessor.
+    //----------------------------------------------------------------
     public int getDefinitions () {
         return definitions;
     }
