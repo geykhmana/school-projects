@@ -17,6 +17,16 @@ public class Account {
    private String name;
 
    //-----------------------------------------------------------------
+   //  Modified Account class that allows an account to be opened
+   //  with just an owner name and account number and sets the
+   //  balance to 100 by default.
+   //-----------------------------------------------------------------
+   public Account (String owner, long account) {
+      name = owner;
+      acctNumber = account;
+      balance = 100.00;
+   }
+   //-----------------------------------------------------------------
    //  Sets up the account by defining its owner, account number,
    //  and initial balance.
    //-----------------------------------------------------------------
