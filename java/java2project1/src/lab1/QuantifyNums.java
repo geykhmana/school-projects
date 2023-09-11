@@ -11,7 +11,9 @@ public class QuantifyNums {
 
         for (int i = 0; i < intList.size(); i++) {
             System.out.println(intList.get(i));
-            System.out.println(uniqueNums);
+            for (int j = 0; j < intList.size(); j++) {
+                System.out.println(uniqueNums);
+            }
         }
 
         return null;
