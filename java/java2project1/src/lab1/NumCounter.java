@@ -12,8 +12,13 @@ public class NumCounter {
         while (i < 7) {
             System.out.println("Enter an integer from 0 to 50 (inclusive): ");
             int newInt = getNumInput.nextInt();
-            intList.add(newInt);
-            i++;
+            if (newInt >= 0 && newInt <= 50) {
+                intList.add(newInt);
+                i++;
+            } else {
+                System.out.println("The number you entered was not within the range 0-50. Please try again.\n");
+                continue;
+            }
         }
 
         System.out.println(intList);
