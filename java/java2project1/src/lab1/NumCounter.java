@@ -21,6 +21,6 @@ public class NumCounter {
             }
         }
 
-        System.out.println(intList);
+        QuantifyNums quantifyNums = new QuantifyNums(intList);
     }
 }
