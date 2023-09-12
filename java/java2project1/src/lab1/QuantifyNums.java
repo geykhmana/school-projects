@@ -11,28 +11,25 @@ public class QuantifyNums {
         uniqueNums.add((Integer) intList.get(0));
         quantOfNums.add(0);
 
-        outerloop:
-        for (int i = 0; i < intList.size(); i++) {
-            System.out.println(intList.get(i));
+        outerloop: for (int i = 0; i < intList.size(); i++) {
+
+            // If a duplicate number is found, log that in quantOfNums, then move to the next number in intList
             for (int j = 0; j < uniqueNums.size(); j++) {
-                if (intList.get(i) == quantOfNums.get(j)) {
-                    // If a duplicate number is found, log that in quantOfNums, then move to the next number in intList
+                if (intList.get(i) == uniqueNums.get(j)) {
                     int currentQuant = quantOfNums.get(j);
                     quantOfNums.set(j, currentQuant+1);
                     continue outerloop;
-                } else {
-                    // If not, move on to the next value in uniqueNums for comparison
-                    j++;
                 }
             }
+
             // If no match is found, log that in uniqueNames and quantOfNums
             uniqueNums.add((Integer) intList.get(i));
             quantOfNums.add(1);
         }
 
-        String msgToReturn = "The numbers you entered were:";
+        String msgToReturn = "\nThe numbers you entered were:";
         for (int j = 0; j < uniqueNums.size(); j++) {
-            msgToReturn = msgToReturn + "\n" + uniqueNums.get(j) + " - " + quantOfNums.get(j) + " times";
+            msgToReturn = msgToReturn + "\n" + uniqueNums.get(j) + " - " + quantOfNums.get(j) + " time(s)";
         }
         System.out.println(msgToReturn);
     }
