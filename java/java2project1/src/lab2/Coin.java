@@ -29,8 +29,7 @@ public class Coin {
    //-----------------------------------------------------------------
    //  Returns true if the current face of the coin is heads.
    //-----------------------------------------------------------------
-   public boolean isHeads ()
-   {
+   public boolean isHeads () {
       return (face == HEADS);
    }
 
