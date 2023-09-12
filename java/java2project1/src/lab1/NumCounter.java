@@ -9,7 +9,10 @@ public class NumCounter {
         Scanner getNumInput = new Scanner(System.in);
         int i = 0;
 
-        while (i < 7) {
+        System.out.println("Enter the amount of numbers you would like to enter: ");
+        int amntOfNums = getNumInput.nextInt();
+
+        while (i < amntOfNums) {
             System.out.println("Enter an integer from 0 to 50 (inclusive): ");
             int newInt = getNumInput.nextInt();
             if (newInt >= 0 && newInt <= 50) {
