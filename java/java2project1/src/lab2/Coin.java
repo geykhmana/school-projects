@@ -4,8 +4,9 @@
 //  Represents a coin with two sides that can be flipped.
 //********************************************************************
 
-public class Coin
-{
+package lab2;
+
+public class Coin {
    private final int HEADS = 0;
    private final int TAILS = 1;
 
@@ -14,16 +15,14 @@ public class Coin
    //-----------------------------------------------------------------
    //  Sets up the coin by flipping it initially.
    //-----------------------------------------------------------------
-   public Coin ()
-   {
+   public Coin () {
       flip();
    }
 
    //-----------------------------------------------------------------
    //  Flips the coin by randomly choosing a face value.
    //-----------------------------------------------------------------
-   public void flip ()
-   {
+   public void flip () {
       face = (int) (Math.random() * 2);
    }
 
@@ -38,8 +37,7 @@ public class Coin
    //-----------------------------------------------------------------
    //  Returns the current face of the coin as a string.
    //-----------------------------------------------------------------
-   public String toString()
-   {
+   public String toString() {
       String faceName;
 
       if (face == HEADS)
