@@ -50,6 +50,6 @@ public class Doctor {
     //  Prints a message appropriate for this employee.
     //-----------------------------------------------------------------
     public void work() {
-        System.out.println (name + " works for the hospital as a doctor and diagnoses patients.");
+        System.out.println (name + " is a doctor at the hospital.");
     }
 }
