@@ -1,12 +1,12 @@
 package lab2;
-public class Doctor {
+public class Nurse {
     protected String name;
     protected int number;
 
     //-----------------------------------------------------------------
     //  Sets up this hospital employee with the specified information.
     //-----------------------------------------------------------------
-    public Doctor (String empName, int empNumber) {
+    public Nurse (String empName, int empNumber) {
         name = empName;
         number = empNumber;
     }
@@ -50,6 +50,6 @@ public class Doctor {
     //  Prints a message appropriate for this employee.
     //-----------------------------------------------------------------
     public void work() {
-        System.out.println (name + " works for the hospital as a doctor and diagnoses patients.");
+        System.out.println (name + " is a nurse at the hospital.");
     }
 }
