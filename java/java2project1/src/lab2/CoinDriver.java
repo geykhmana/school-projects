@@ -13,5 +13,9 @@ public class CoinDriver {
         int coinSum = coin1.getValue() + coin2.getValue() + coin3.getValue();
 
         System.out.println("The sum of the 3 coins is " + coinSum + ".");
+
+        System.out.println("The initial face of the first coin is " + coin1);
+        coin1.flip();
+        System.out.println("The face of the first coin after flipping it is " + coin1);
     }
 }
