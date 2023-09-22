@@ -1,4 +1,5 @@
 import numpy as np
+import sympy
 
 A = np.array([[8.0, 3, -2], [-4, 7, 5], [3, 4, -12]])
 b = np.array([[9.0], [15], [35]])
@@ -16,3 +17,13 @@ print(Ag[0,2])
 print(Ag[0,:])
 print(Ag[1,:])
 print(Ag[:, 3])
+Ag[1,:] = Ag[0,:] * (-1) + Ag[1,:]
+print(Ag)
+Ag[2,:] = Ag[0,:] * (-1) + Ag[2,:]
+Ag[2,:] = Ag[1,:] * (-2) + Ag[2,:]
+Ag[2,:] = Ag[2,:] / 2
+print(Ag)
+Ag[0,:] = Ag[1,:] * (-1) + Ag[0,:]
+Ag[0,:] = Ag[2,:] * (2) + Ag[0,:]
+Ag[1,:] = Ag[2,:] * (-3) + Ag[1,:]
+print(Ag)
