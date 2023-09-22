@@ -10,7 +10,7 @@ b1 = np.matrix('12.0; 15; 16')
 Ans2 = np.linalg.solve(A1, b1)
 print(Ans2)
 
-Ag = np.array([[1.0, 1, 1, 12], [1, 2, 4, 15], [1, 3, 9, 19]])
+Ag = np.matrix([[1.0, 1, 1, 12], [1, 2, 4, 15], [1, 3, 9, 19]])
 print(Ag[0,0])
 print(Ag[0,2])
 print(Ag[0,:])
