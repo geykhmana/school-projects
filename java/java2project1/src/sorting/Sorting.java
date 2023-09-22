@@ -1,17 +1,17 @@
 package sorting;
 
 public class Sorting {
-	   public static void selectionSort (Comparable[] list)
-	   {
+	   public static void selectionSort (Comparable[] list) {
 	      int min;
 	      Comparable temp;
 
-	      for (int index = 0; index < list.length-1; index++)
-	      {
+	      for (int index = 0; index < list.length-1; index++) {
 	         min = index;
-	         for (int scan = index+1; scan < list.length; scan++)
-	            if (list[scan].compareTo(list[min]) < 0)
-	               min = scan;
+	         for (int scan = index+1; scan < list.length; scan++) {
+				 if (list[scan].compareTo(list[min]) < 0) {
+					 min = scan;
+				 }
+			 }
 
 	         // Swap the values
 	         temp = list[min];
@@ -19,16 +19,13 @@ public class Sorting {
 	         list[index] = temp;
 	      }
 	   }
-	   public static void insertionSort (Comparable[] list)
-	   {
-	      for (int index = 1; index < list.length; index++)
-	      {
+	   public static void insertionSort (Comparable[] list) {
+	      for (int index = 1; index < list.length; index++) {
 	         Comparable key = list[index];
 	         int position = index;
 
 	         //  Shift larger values to the right
-	         while (position > 0 && key.compareTo(list[position-1]) < 0)
-	         {
+	         while (position > 0 && key.compareTo(list[position-1]) < 0) {
 	            list[position] = list[position-1];
 	            position--;
 	         }
@@ -36,5 +33,4 @@ public class Sorting {
 	         list[position] = key;
 	      }
 	   }
-
 }
