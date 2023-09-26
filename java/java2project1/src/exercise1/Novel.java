@@ -3,16 +3,16 @@ package exercise1;
 import java.util.ArrayList;
 
 public class Novel extends ReadingMaterial {
-    public ArrayList<String> characters;
+    public String[] characters;
 
-    public Novel(String title, String author, int numPages, String character) {
+    public Novel(String title, String author, int numPages, String[] characters) {
         super(title, author, numPages);
-        characters.add(character);
+        this.characters = characters;
     }
 
     public void listCharacters() {
-        for (int i = 0; i < characters.size(); i++) {
-            System.out.println(characters.get(i));
+        for (int i = 0; i < characters.length; i++) {
+            System.out.println(characters[i]);
         }
     }
 }
