@@ -10,6 +10,7 @@ public class Driver {
         System.out.println(harryPotter.isLong());
 
         avengers.listCharacters();
+        avengers.summary();
 
         System.out.println(pc.isLong());
         pc.summary();
