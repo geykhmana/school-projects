@@ -3,17 +3,16 @@
 //
 //  Demonstrates the use of a try-catch block.
 //********************************************************************
+package exception;
 
 import java.util.Scanner;
 
-public class ProductCodes
-{
+public class ProductCodes {
    //-----------------------------------------------------------------
    //  Counts the number of product codes that are entered with a
    //  zone of R and and district greater than 2000.
    //-----------------------------------------------------------------
-   public static void main (String[] args)
-   {
+   public static void main (String[] args) {
       String code;
       char zone;
       int district, valid = 0, banned = 0;
