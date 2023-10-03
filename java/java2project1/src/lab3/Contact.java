@@ -1,18 +1,16 @@
-//********************************************************************
+package lab3;//********************************************************************
 //  Contact.java       Author: Lewis/Loftus
 //
 //  Represents a phone contact.
 //********************************************************************
 
-public class Contact implements Comparable // Has method compareTo
-{
+public class Contact implements Comparable { // Has method compareTo
    private String firstName, lastName, phone;
 
    //-----------------------------------------------------------------
    //  Constructor: Sets up this contact with the specified data.
    //-----------------------------------------------------------------
-   public Contact (String first, String last, String telephone)
-   {
+   public Contact (String first, String last, String telephone) {
       firstName = first;
       lastName = last;
       phone = telephone;
@@ -29,8 +27,7 @@ public class Contact implements Comparable // Has method compareTo
    //-----------------------------------------------------------------
    //  Returns a description of this contact as a string.
    //-----------------------------------------------------------------
-   public boolean equals (Object other)
-   {
+   public boolean equals (Object other) {
       return (lastName.equals(((Contact)other).getLastName()) &&
               firstName.equals(((Contact)other).getFirstName()));
               // Use String equals
@@ -38,8 +35,7 @@ public class Contact implements Comparable // Has method compareTo
    //-----------------------------------------------------------------
    //  Uses both last and first names to determine ordering.
    //-----------------------------------------------------------------
-   public int compareTo (Object other)
-   {
+   public int compareTo (Object other) {
       int result;
 
       String otherFirst = ((Contact)other).getFirstName();

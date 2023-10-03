@@ -1,7 +1,7 @@
+package lab3;
 
 public class PhoneList {
-	public static void main (String[] args)
-	   {
+	public static void main (String[] args) {
 	      Contact[] friends = new Contact[8];
 
 	      friends[0] = new Contact ("John", "Smith", "610-555-7384");
