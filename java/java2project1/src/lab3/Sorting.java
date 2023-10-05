@@ -2,18 +2,18 @@ package lab3;
 
 public class Sorting {
 	   public static void selectionSort (Comparable[] list) {
-	      int min;
+	      int max;
 	      Comparable temp;
 
 	      for (int index = 0; index < list.length-1; index++) {
-	         min = index;
+	         max = index;
 	         for (int scan = index+1; scan < list.length; scan++)
-	            if (list[scan].compareTo(list[min]) < 0)
-	               min = scan;
+	            if (list[scan].compareTo(list[max]) > 0)
+	               max = scan;
 
 	         // Swap the values
-	         temp = list[min];
-	         list[min] = list[index];
+	         temp = list[max];
+	         list[max] = list[index];
 	         list[index] = temp;
 	      }
 	   }
