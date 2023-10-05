@@ -28,7 +28,8 @@ public class Contact implements Comparable { // Has method compareTo
    //  Returns a description of this contact as a string.
    //-----------------------------------------------------------------
    public boolean equals (Object other) {
-      return (lastName.equals(((Contact)other).getLastName()) &&
+      return (phone.equals(((Contact)other).getPhone()) &&
+              lastName.equals(((Contact)other).getLastName()) &&
               firstName.equals(((Contact)other).getFirstName()));
               // Use String equals
    }
