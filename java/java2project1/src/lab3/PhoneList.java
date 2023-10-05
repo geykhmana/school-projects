@@ -12,7 +12,7 @@ public class PhoneList {
 	      friends[5] = new Contact ("Frank", "Phelps", "322-555-2284");
 	      friends[6] = new Contact ("Mario", "Guzman", "804-555-9066");
 	      friends[7] = new Contact ("Marsha", "Grant", "243-555-2837");
-	      Sorting.insertionSort(friends);
+	      Sorting.selectionSort(friends);
 
 	      for (Contact friend : friends)
 	         System.out.println (friend);

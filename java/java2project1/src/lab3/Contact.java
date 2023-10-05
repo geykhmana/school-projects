@@ -33,18 +33,24 @@ public class Contact implements Comparable { // Has method compareTo
               // Use String equals
    }
    //-----------------------------------------------------------------
-   //  Uses both last and first names to determine ordering.
+   //  Uses both phone number and last and first names to determine ordering.
    //-----------------------------------------------------------------
    public int compareTo (Object other) {
       int result;
 
+      String otherPhone = ((Contact)other).getPhone();
       String otherFirst = ((Contact)other).getFirstName();
       String otherLast = ((Contact)other).getLastName();
 
-      if (lastName.equals(otherLast))
-         result = firstName.compareTo(otherFirst); // String compareTo
-      else
-         result = lastName.compareTo(otherLast); // String compareTo
+      if (phone.equals(otherPhone)) {
+         if (lastName.equals(otherLast)) {
+            result = firstName.compareTo(otherFirst);
+         } else {
+            result = lastName.compareTo(otherLast);
+         }
+      } else {
+         result = phone.compareTo(otherPhone);
+      }
 
       return result;
    }
@@ -62,5 +68,13 @@ public class Contact implements Comparable { // Has method compareTo
    public String getLastName ()
    {
       return lastName;
+   }
+
+   //-----------------------------------------------------------------
+   //  Phone number accessor.
+   //-----------------------------------------------------------------
+   public String getPhone ()
+   {
+      return phone;
    }
 }
