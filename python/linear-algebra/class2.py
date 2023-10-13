@@ -12,7 +12,7 @@ D1 = np.matrix(D)  # Converts an array to a matrix
 u = np.matrix('3; 0; 7')
 v = np.matrix('34; 119')
 
-print(A @ B)
+print(A @ B)  # Matrix multiplication
 print(np.matmul(A, B))
 print(A + 1)  # Adds 1 to every entry
 print(I3)
@@ -28,4 +28,4 @@ print(A - A1)
 print(B - B1)
 print(D1)
 print(B1.T * D1)
-print(A1*3*u - 2*v)
+print(A1 * 3 * u - 2 * v)
