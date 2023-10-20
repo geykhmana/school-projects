@@ -18,10 +18,9 @@ public class MagazineList {
       MagazineNode node = new MagazineNode(mag);
       MagazineNode current;
 
-      if (list == null)
+      if (list == null) {
          list = node;
-      else
-      {
+      } else {
          current = list;
          while (current.next != null)
             current = current.next;
