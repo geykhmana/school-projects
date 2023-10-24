@@ -33,6 +33,6 @@ for i in range(8):
         if adj[i, j] == 1:
             ax2.plot([SN[0, i], SN[0, j]], [SN[1, i], SN[1, j]], 'b')
 
-ax1.axis("off")
+ax2.axis("off")
 show()
 plt.savefig("n-plot-transformed.png")
