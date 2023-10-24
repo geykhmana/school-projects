@@ -24,7 +24,7 @@ public class lab4 {
         } else {
             ArrayList<Integer> previousLine = triangleLine2;
             
-            for (int i = 0; i < n; i++) {
+            while (triangleLine.size() < n) {
                 triangleLine.clear();
                 triangleLine.add(1);
                 for (int j = 1; j <= previousLine.size(); j++) {
