@@ -18,7 +18,7 @@ f1, ax1 = plt.subplots(1)
 for i in range(8):
     for j in range(i + 1):
         if adj[i, j] == 1:
-            ax1.plot([N[0, i], N[0, j], N[1, i], N[1, j], 'b'])
+            ax1.plot([N[0, i], N[0, j]], [N[1, i], N[1, j]], 'b')
 
 ax1.axis("off")
 show()
