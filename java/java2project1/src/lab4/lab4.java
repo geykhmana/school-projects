@@ -29,7 +29,7 @@ public class lab4 {
                 triangleLine.clear();
                 triangleLine.add(1);
                 for (int j = 1; j <= previousLine.size(); j++) {
-                    triangleLine.add() = previousLine.get(j-1) + previousLine.get(j);
+                    triangleLine.add(previousLine.get(j-1) + previousLine.get(j));
                     lastIndex = j+1; /* Allows for the last 1 to be added to the line after the loop */
                 }
                 triangleLine.add(lastIndex, 1);
@@ -37,6 +37,6 @@ public class lab4 {
             }
         }
 
-        System.out.println("If N = " + n + ", then the Nth line of Pascal's triangle is:\n" + Arrays.toString(triangleLine));
+        System.out.println("If N = " + n + ", then the Nth line of Pascal's triangle is:\n" + triangleLine);
     }
 }
