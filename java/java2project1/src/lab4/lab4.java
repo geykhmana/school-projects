@@ -32,12 +32,16 @@ public class lab4 {
                 }
                 triangleLine.add(1);
                 previousLine.clear();
-                for(Integer val: triangleLine) { /* Adds the values of triangleLine to previousLine one-by-one because that's the only way it works for some reason */
+                for (Integer val: triangleLine) { /* Adds the values of triangleLine to previousLine one-by-one because that's the only way it works for some reason */
                     previousLine.add(val);
                 }
             }
         }
 
-        System.out.println("If N = " + n + ", then the Nth line of Pascal's triangle is:\n" + triangleLine);
+        String triangleLineString = "";
+        for (Integer val: triangleLine) {
+            triangleLineString = triangleLineString + " " + val;
+        }
+        System.out.println("If N = " + n + ", then the Nth line of Pascal's triangle is:\n" + triangleLineString);
     }
 }
