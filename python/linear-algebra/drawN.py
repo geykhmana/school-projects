@@ -36,3 +36,20 @@ for i in range(8):
 ax2.axis("off")
 show()
 plt.savefig("n-plot-transformed.png")
+
+phi = math.pi / 6
+R = np.matrix([[math.cos(phi), -math.sin(phi)],
+               [math.sin(phi), math.cos(phi)]])
+NR = R * N
+
+f5, ax5 = plt.subplots(1, 2)
+for i in range(8):
+    for j in range(i + 1):
+        if adj[i, j] == 1:
+            ax5[0].plot([N[0, i], N[0, j]], [N[1, i], N[1, j]], "r")
+            ax5[1].plot([NR[0, i], NR[0, j]], [NR[1, i], NR[1, j]], "b")
+ax5[0].axis("off")
+ax5[1].axis("off")
+ax5[0].set_title("Regular N")
+ax5[1].set_title("Rotated N")
+plt.savefig("RegularAndRotatedN.png")
