@@ -24,14 +24,17 @@ public class lab4 {
         } else {
             ArrayList<Integer> previousLine = triangleLine2;
             
-            while (triangleLine.size() < n) {
+            for (int i = 2; i < n; i++) {
                 triangleLine.clear();
                 triangleLine.add(1);
-                for (int j = 1; j <= previousLine.size(); j++) {
+                for (int j = 1; j < previousLine.size(); j++) { /* Starts by creating line 3 from line 2 */
                     triangleLine.add(previousLine.get(j-1) + previousLine.get(j));
                 }
                 triangleLine.add(1);
-                previousLine = triangleLine;
+                previousLine.clear();
+                for(Integer val: triangleLine) { /* Adds the values of triangleLine to previousLine one-by-one because that's the only way it works for some reason */
+                    previousLine.add(val);
+                }
             }
         }
 
