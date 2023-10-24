@@ -1,11 +1,15 @@
 package lab4;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class lab4 {
     public static void main(String[] args) {
-        int[] triangleLine = new int[]{1};
-        int[] triangleLine2 = new int[]{1, 1};
+        ArrayList<Integer> triangleLine = new ArrayList<Integer>();
+        triangleLine.add(1);
+        ArrayList<Integer> triangleLine2 = new ArrayList<Integer>();
+        triangleLine2.add(1);
+        triangleLine2.add(1);
         int lastIndex = 0;
         Scanner getN = new Scanner(System.in);
         
@@ -19,15 +23,16 @@ public class lab4 {
         } else if (n < 1) {
             System.out.println("Invalid number");
         } else {
-            int[] previousLine = triangleLine2;
+            ArrayList<Integer> previousLine = triangleLine2;
             
             for (int i = 0; i < n; i++) {
-                triangleLine = new int[]{1};
-                for (int j = 1; j < previousLine.length-1; j++) {
-                    triangleLine[j] = previousLine[j-1] + previousLine[j];
+                triangleLine.clear();
+                triangleLine.add(1);
+                for (int j = 1; j <= previousLine.size(); j++) {
+                    triangleLine.add() = previousLine.get(j-1) + previousLine.get(j);
                     lastIndex = j+1; /* Allows for the last 1 to be added to the line after the loop */
                 }
-                triangleLine[lastIndex] = 1;
+                triangleLine.add(lastIndex, 1);
                 previousLine = triangleLine;
             }
         }
