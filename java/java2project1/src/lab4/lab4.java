@@ -21,6 +21,7 @@ public class lab4 {
             triangleLine = triangleLine2;
         } else if (n < 1) {
             System.out.println("Invalid number");
+            System.exit(0);
         } else {
             ArrayList<Integer> previousLine = triangleLine2;
             
