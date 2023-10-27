@@ -28,3 +28,18 @@ ax1.axis("off")
 ax1.set_title("Regular k")
 show()
 plt.savefig("k-plot.png")
+
+phi = math.pi / 4
+R = np.matrix([[math.cos(phi), -math.sin(phi)],
+               [math.sin(phi), math.cos(phi)]])
+kR = R * k
+
+f2, ax2 = plt.subplots(1)
+for i in range(11):
+    for j in range(i + 1):
+        if adj[i, j] == 1:
+            ax2.plot([kR[0, i], kR[0, j]], [kR[1, i], kR[1, j]], "b")
+
+ax2.axis("off")
+ax2.set_title("Rotated k")
+plt.savefig("rotated-k-plot.png")
