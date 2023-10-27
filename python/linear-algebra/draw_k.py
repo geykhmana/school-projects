@@ -22,7 +22,7 @@ for i in range(11):
         if adj[i, j] == 1:
             ax1.plot([k[0, i], k[0, j]], [k[1, i], k[1, j]], 'b')
 
-plt.xlim(0, 10)
+plt.xlim(0, 14)
 plt.ylim(0, 10)
 ax1.axis("off")
 show()
