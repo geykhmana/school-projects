@@ -1,4 +1,4 @@
-package collections;
+package lab5;
 
 public class MagazineRack {
    //----------------------------------------------------------------
