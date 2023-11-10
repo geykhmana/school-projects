@@ -8,7 +8,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class ImageDisplay extends Application{
+public class ImageDisplay extends Application {
 	public void start(Stage primaryStage) {
 		Image img = new Image("E://Projects//Java//GUIDesign//index.png");
 		ImageView imgView=new ImageView(img);
