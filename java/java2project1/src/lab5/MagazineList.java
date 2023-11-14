@@ -1,52 +1,35 @@
 package lab5;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class MagazineList {
-   private MagazineNode list;
+   /*private MagazineNode list;*/
+   Queue<Magazine> MagazineQueue = new LinkedList<Magazine>();
 
-   //----------------------------------------------------------------
-   //  Sets up an initially empty list of magazines.
-   //----------------------------------------------------------------
-   public MagazineList()
-   {
-      list = null;
+   public MagazineList() {
+      /*list = null;*/
    }
-   //----------------------------------------------------------------
-   //  Creates a new MagazineNode object and adds it to the end of
-   //  the linked list.
-   //----------------------------------------------------------------
-   public void add(Magazine mag) {
-      MagazineNode node = new MagazineNode(mag);
-      MagazineNode current;
 
-      if (list == null) {
-         list = node;
-      } else {
-         current = list;
-         while (current.next != null)
-            current = current.next;
-         current.next = node;
-      }
+   public void add(Magazine mag) {
+      MagazineQueue.add(mag);
    }
    public String toString() {
       String result = "";
 
-      MagazineNode current = list;
 
-      while (current != null) {
-         result += current.magazine + "\n";
-         current = current.next;
+      while (MagazineQueue.isEmpty() != true) {
+         result += MagazineQueue.peek() + "\n";
+         MagazineQueue.poll();
       }
 
       return result;
    }
-   //*****************************************************************
-   //  An inner class that represents a node in the magazine list.
-   //  The public variables are accessed by the MagazineList class.
-   //*****************************************************************
+
    
 }
 
-class MagazineNode {
+/*class MagazineNode {
    public Magazine magazine;
    public MagazineNode next;
 
@@ -57,4 +40,4 @@ class MagazineNode {
       magazine = mag;
       next = null;
    }
-}
+}*/
