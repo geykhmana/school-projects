@@ -4,11 +4,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class MagazineList {
-   /*private MagazineNode list;*/
    Queue<Magazine> MagazineQueue = new LinkedList<Magazine>();
 
    public MagazineList() {
-      /*list = null;*/
+
    }
 
    public void add(Magazine mag) {
@@ -16,7 +15,6 @@ public class MagazineList {
    }
    public String toString() {
       String result = "";
-
 
       while (MagazineQueue.isEmpty() != true) {
          result += MagazineQueue.peek() + "\n";
