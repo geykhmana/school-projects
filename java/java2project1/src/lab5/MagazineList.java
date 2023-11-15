@@ -15,10 +15,11 @@ public class MagazineList {
    }
    public String toString() {
       String result = "";
+      Queue tempQueue = MagazineQueue;
 
-      while (MagazineQueue.isEmpty() != true) {
-         result += MagazineQueue.peek() + "\n";
-         MagazineQueue.poll();
+      while (tempQueue.isEmpty() != true) {
+         result += tempQueue.peek() + "\n";
+         tempQueue.poll();
       }
 
       return result;
