@@ -37,3 +37,21 @@ for i in range(16):
 ax.set_title("Center at " + str(center))
 ax.axis("off")
 plt.savefig("ToyotaQ1.png")
+
+b, c, d = 0, 10, 25  # center
+center = (b, c, d)
+P = np.matrix([[1, 0, -b / d, 0], [0, 1, -c / d, 0], [0, 0, 0, 0], [0, 0, -1 / d, 1]])
+PD = P * D
+PD = PD / PD[3, :]
+
+f, ax = plt.subplots(1)
+
+for i in range(16):
+    for j in range(i + 1):
+        if C[i, j] == 1:
+            ax.plot([PD[0, i], PD[0, j]], [PD[1, i], PD[1, j]], "g")
+
+ax.set_title("Center at " + str(center))
+ax.axis("off")
+plt.savefig("ToyotaQ2.png")
+
