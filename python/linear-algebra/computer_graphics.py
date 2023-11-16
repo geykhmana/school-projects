@@ -106,3 +106,28 @@ ax4[1].axis("off")
 ax4[0].set_title("Center at " + str(center))
 ax4[1].set_title("Rotated 45° about the z axis")
 plt.savefig("Toyota_Normal_and_Rotated_45z.png")
+
+A = np.matrix([[1.5, 0,  0, 0],
+               [0, 1.5, 0, 0],
+               [0, 0, 1.5, 0],
+               [0, 0, 0, 1]])
+AD = A * D
+b, c, d = 0, 10, 25  # center
+center = (b, c, d)
+P = np.matrix([[1, 0, -b / d, 0], [0, 1, -c / d, 0], [0, 0, 0, 0], [0, 0, -1 / d, 1]])
+PD = P * D
+PD = PD / PD[3, :]
+PAD = P * AD
+PAD = PAD / PAD[3, :]
+
+f5, ax5 = plt.subplots(1, 2)
+for i in range(16):
+    for j in range(i + 1):
+        if C[i, j] == 1:
+            ax5[0].plot([PD[0, i], PD[0, j]], [PD[1, i], PD[1, j]], "g")
+            ax5[1].plot([PAD[0, i], PAD[0, j]], [PAD[1, i], PAD[1, j]], "r")
+ax5[0].axis("off")
+ax5[1].axis("off")
+ax5[0].set_title("Center at " + str(center))
+ax5[1].set_title("Zoomed 150%")
+plt.savefig("Toyota_Normal_and_Zoomed.png")
