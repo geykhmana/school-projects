@@ -79,4 +79,30 @@ ax3[0].axis("off")
 ax3[1].axis("off")
 ax3[0].set_title("Center at " + str(center))
 ax3[1].set_title("Rotated 30° about the y axis")
-plt.savefig("Toyota_Normal_and_Rotated.png")
+plt.savefig("Toyota_Normal_and_Rotated_30y.png")
+
+phi = math.pi / 4
+R = np.matrix([[math.cos(phi), -math.sin(phi),  0, 0],
+               [math.sin(phi), math.cos(phi), 0, 0],
+               [0, 0, 1, 0],
+               [0, 0, 0, 1]])
+RD = R * D
+b, c, d = 0, 10, 25  # center
+center = (b, c, d)
+P = np.matrix([[1, 0, -b / d, 0], [0, 1, -c / d, 0], [0, 0, 0, 0], [0, 0, -1 / d, 1]])
+PD = P * D
+PD = PD / PD[3, :]
+PRD = P * RD
+PRD = PRD / PRD[3, :]
+
+f4, ax4 = plt.subplots(1, 2)
+for i in range(16):
+    for j in range(i + 1):
+        if C[i, j] == 1:
+            ax4[0].plot([PD[0, i], PD[0, j]], [PD[1, i], PD[1, j]], "g")
+            ax4[1].plot([PRD[0, i], PRD[0, j]], [PRD[1, i], PRD[1, j]], "r")
+ax4[0].axis("off")
+ax4[1].axis("off")
+ax4[0].set_title("Center at " + str(center))
+ax4[1].set_title("Rotated 45° about the z axis")
+plt.savefig("Toyota_Normal_and_Rotated_45z.png")
