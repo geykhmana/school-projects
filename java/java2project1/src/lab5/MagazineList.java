@@ -13,9 +13,17 @@ public class MagazineList {
    public void add(Magazine mag) {
       MagazineQueue.add(mag);
    }
+   public void remove() {
+      MagazineQueue.poll();
+   }
+
    public String toString() {
       String result = "";
-      Queue tempQueue = MagazineQueue;
+      Queue tempQueue = new LinkedList();
+
+      for (Object i : MagazineQueue.toArray()) {
+         tempQueue.add(i);
+      }
 
       while (tempQueue.isEmpty() != true) {
          result += tempQueue.peek() + "\n";
@@ -27,16 +35,3 @@ public class MagazineList {
 
    
 }
-
-/*class MagazineNode {
-   public Magazine magazine;
-   public MagazineNode next;
-
-   //--------------------------------------------------------------
-   //  Sets up the node
-   //--------------------------------------------------------------
-   public MagazineNode(Magazine mag) {
-      magazine = mag;
-      next = null;
-   }
-}*/
