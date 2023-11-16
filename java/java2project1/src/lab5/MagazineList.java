@@ -32,6 +32,4 @@ public class MagazineList {
 
       return result;
    }
-
-   
 }
