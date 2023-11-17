@@ -1,3 +1,5 @@
+package com.example.javafxdemo;
+
 import java.util.Random;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -5,14 +7,11 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-public class Boxes extends Application
-{
-	public void start(Stage primaryStage)
-	{
+public class Boxes extends Application {
+	public void start(Stage primaryStage) {
 		Group root = new Group();
 		Random gen = new Random();
-		for (int count = 1; count <= 50; count++)
-		{
+		for (int count = 1; count <= 50; count++) {
 			int x = gen.nextInt(350) + 1;
 			int y = gen.nextInt(350) + 1;
 			
