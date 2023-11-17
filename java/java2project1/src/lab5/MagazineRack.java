@@ -15,7 +15,7 @@ public class MagazineRack {
       rack.add(new Magazine("House and Garden"));
       rack.add(new Magazine("GQ"));
 
-      rack.remove();    // Removes the first item in the queue
+      //rack.remove();    // Removes the first item in the queue
 
       System.out.println(rack); 
    }
