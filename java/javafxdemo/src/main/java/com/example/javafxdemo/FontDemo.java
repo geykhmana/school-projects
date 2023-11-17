@@ -1,3 +1,5 @@
+package com.example.javafxdemo;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.Group;
@@ -8,10 +10,8 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class FontDemo extends Application
-{
-	public void start(Stage primaryStage)
-	{
+public class FontDemo extends Application {
+	public void start(Stage primaryStage) {
 		Font font1 = new Font("Courier", 36);
 		Font font2 = Font.font("Times", FontWeight.BOLD,
 		FontPosture.ITALIC, 28);

@@ -1,3 +1,5 @@
+package com.example.javafxdemo;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
@@ -7,18 +9,16 @@ import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
 //************************************************************************
-//  RedOrBlue.java       Author: Lewis/Loftus
+//ï¿½ RedOrBlue.java ï¿½ ï¿½ ï¿½ Author: Lewis/Loftus
 //
-//  Demonstrates the use of one handler for multiple buttons.
+//ï¿½ Demonstrates the use of one handler for multiple buttons.
 //************************************************************************
 
-public class RedOrBlue extends Application
-{
+public class RedOrBlue extends Application {
 	private Button redButton, blueButton;
 	private FlowPane pane;
 	
-	public void start(Stage primaryStage)
-	{
+	public void start(Stage primaryStage) {
 		redButton = new Button("Red!");
 		redButton.setOnAction(this::processColorButton);
 		
