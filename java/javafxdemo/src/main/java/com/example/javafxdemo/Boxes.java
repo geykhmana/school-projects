@@ -23,6 +23,8 @@ public class Boxes extends Application {
 				fill = Color.YELLOW;
 			else if (height < 10)
 				fill = Color.GREEN;
+			else if (height > 15)
+				fill = Color.RED;
 			
 			Rectangle box = new Rectangle(x, y, width, height);
 			box.setStroke(Color.WHITE);
