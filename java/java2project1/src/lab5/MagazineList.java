@@ -1,13 +1,13 @@
 package lab5;
 
 public class MagazineList {
-   private MagazineNode list;
+   private MagazineNode front, rear;
 
    //----------------------------------------------------------------
    //  Sets up an initially empty list of magazines.
    //----------------------------------------------------------------
    public MagazineList() {
-      list = null;
+      front = rear = null;
    }
    //----------------------------------------------------------------
    //  Creates a new MagazineNode object and adds it to the end of
@@ -17,24 +17,35 @@ public class MagazineList {
       MagazineNode node = new MagazineNode(mag);
       MagazineNode current;
 
-      if (list == null) {
-         list = node;
+      if (rear == null) {
+         front = rear = node;
       } else {
-         current = list;
-         while (current.next != null)
+         current = rear;
+         while (current.next != null) {
             current = current.next;
+         }
          current.next = node;
       }
    }
    
    public void remove() {
-       MagazineNode temp;
-       MagazineNode current;
+      MagazineNode current = front.next;
+
+      if (front == null) {
+         return;
+      }
+
+      front.next = null;
+      front = current;
+
+      if (front == null) {
+         rear = null;
+      }
    }
    public String toString() {
       String result = "";
 
-      MagazineNode current = list;
+      MagazineNode current = front;
 
       while (current != null) {
          result += current.magazine + "\n";
