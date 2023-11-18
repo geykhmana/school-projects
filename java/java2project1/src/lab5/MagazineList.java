@@ -13,7 +13,7 @@ public class MagazineList {
    //  Creates a new MagazineNode object and adds it to the end of
    //  the linked list.
    //----------------------------------------------------------------
-   public void add(Magazine mag) {
+   public void enqueue(Magazine mag) {
       MagazineNode node = new MagazineNode(mag);
       MagazineNode current;
 
@@ -27,8 +27,7 @@ public class MagazineList {
          current.next = node;
       }
    }
-   
-   public void remove() {
+   public void dequeue() {
       MagazineNode current = front.next;
 
       if (front == null) {
@@ -40,6 +39,19 @@ public class MagazineList {
 
       if (front == null) {
          rear = null;
+      }
+   }
+   public boolean empty() {
+      MagazineNode current = front;
+
+      while (current == null) {
+         current = current.next;
+      }
+
+      if (current != null) {
+         return false;
+      } else {
+         return true;
       }
    }
    public String toString() {

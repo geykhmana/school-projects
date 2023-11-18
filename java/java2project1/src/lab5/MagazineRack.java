@@ -8,15 +8,17 @@ public class MagazineRack {
    public static void main(String[] args) {
       MagazineList rack = new MagazineList();
 
-      rack.add(new Magazine("Time"));
-      rack.add(new Magazine("Woodworking Today"));
-      rack.add(new Magazine("Communications of the ACM"));
-      rack.add(new Magazine("House and Garden"));
-      rack.add(new Magazine("GQ"));
-      rack.add(new Magazine("Newsweek"));
+      rack.enqueue(new Magazine("Time"));
+      rack.enqueue(new Magazine("Woodworking Today"));
+      rack.enqueue(new Magazine("Communications of the ACM"));
+      rack.enqueue(new Magazine("House and Garden"));
+      rack.enqueue(new Magazine("GQ"));
+      rack.enqueue(new Magazine("Newsweek"));
 
-      rack.remove();    // Removes the first item in the queue
+      rack.dequeue();    // Removes the first item in the queue
 
-      System.out.println(rack); 
+      System.out.println(rack.empty());
+
+      System.out.println(rack);
    }
 }
