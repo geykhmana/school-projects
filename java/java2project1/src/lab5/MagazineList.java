@@ -42,29 +42,27 @@ public class MagazineList {
       }
    }
    public boolean empty() {
-      MagazineNode current = front;
-
-      while (current == null) {
-         current = current.next;
-      }
-
-      if (current != null) {
-         return false;
-      } else {
+      if (front == null) {
          return true;
+      } else {
+         return false;
       }
    }
    public String toString() {
       String result = "";
 
-      MagazineNode current = front;
+      if (empty() == true) {
+         return result;
+      } else {
+         MagazineNode current = front;
 
-      while (current != null) {
-         result += current.magazine + "\n";
-         current = current.next;
+         while (current != null) {
+            result += current.magazine + "\n";
+            current = current.next;
+         }
+
+         return result;
       }
-
-      return result;
    }
    //*****************************************************************
    //  An inner class that represents a node in the magazine list.
