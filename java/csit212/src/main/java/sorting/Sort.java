@@ -7,6 +7,19 @@ public class Sort {
 		/*
 		 * fill in your program
 		 */
+
+		for (int i = 0; i < array.length; i++) {
+			Comparable key = array[i];
+			int position = i;
+
+			while (position > 0 && key.compareTo(array[position-1]) > 0) {
+				array[position] = array[position-1];
+				position--;
+			}
+
+			array[position] = (int) key;
+		}
+
 		return array;
 	}
 
@@ -56,7 +69,7 @@ public class Sort {
 	
 	/*
 	 * Input: an integer array
-	 * Output: true if the array is acsendingly sorted, otherwise return false
+	 * Output: true if the array is ascending-ly sorted, otherwise return false
 	 */
 	public static boolean check_sorted(int[] array) {
 		for (int i = 1; i < array.length; i++) {
