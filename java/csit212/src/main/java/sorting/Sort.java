@@ -8,16 +8,15 @@ public class Sort {
 		 * fill in your program
 		 */
 
-		for (int i = 0; i < array.length; i++) {
-			Comparable key = array[i];
-			int position = i;
+		for (int j = 1; j < array.length; j++) {
+			int key = array[j];
+			int i = j - 1;
 
-			while (position > 0 && key.compareTo(array[position-1]) > 0) {
-				array[position] = array[position-1];
-				position--;
+			while ((i >= 0) && (array[i] > key)) {
+				array[i+1] = array[i];
+				i--;
 			}
-
-			array[position] = (int) key;
+			array[i+1] = key;
 		}
 
 		return array;
