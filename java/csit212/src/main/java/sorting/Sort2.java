@@ -63,7 +63,7 @@ public class Sort2 {
 	
 	/*
 	 * Input: an integer array
-	 * Output: true if the array is acsendingly sorted, otherwise return false
+	 * Output: true if the array is ascendingly sorted, otherwise return false
 	 */
 	public static boolean check_sorted (int[] array) {
 		for (int i = 1; i < array.length; i++) {
