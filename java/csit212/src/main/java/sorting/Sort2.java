@@ -17,23 +17,23 @@ public class Sort2 {
 	public static int[] merge (int[] array, int p, int q, int r) {
 		int n1 = q - p + 1;
 		int n2 = r - q;
-		int[] L = new int[0];
-		int[] R = new int[0];
+		int[] L = new int[n1 + 1];
+		int[] R = new int[n2 + 1];
 
-		for (int i = 1; i < n1; i++) { /*Might be i < n1 instead*/
-			L[i] = array[p + i -1];
+		for (int i = 0; i < n1; i++) { /*Might be i < n1 instead*/
+			L[i] = array[p + i];
 		}
-		for (int j = 1; j <= n2; j++) {
-			R[j] = array[q + j];
+		for (int j = 0; j < n2; j++) {
+			R[j] = array[q + j + 1];
 		}
 
 		L[n1] = Integer.MAX_VALUE; /*Might be L[n1] instead*/
 		R[n2] = Integer.MAX_VALUE;
 
-		int i = 1;
-		int j = 1;
+		int i = 0;
+		int j = 0;
 
-		for (int k = p; k < r; k++) {
+		for (int k = p; k <= r; k++) {
 			if (L[i] <= R[j]) {
 				array[k] = L[i];
 				i++;
