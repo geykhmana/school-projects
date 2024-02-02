@@ -4,16 +4,44 @@ import java.util.*;
 
 public class Sort2 {
 	public static int[] merge_sort (int[] array, int p, int r) {
-		/*
-		 * fill in your program
-		 */
+		if (p < r) {
+			int q = (int)java.lang.Math.floor((p + r)/2);
+			merge_sort(array, p, q);
+			merge_sort(array, q+1, r);
+			merge(array, p, q, r);
+		}
+
 		return array;
 	}
 	
 	public static int[] merge (int[] array, int p, int q, int r) {
-		/*
-		 * fill in your program
-		 */
+		int n1 = q - p + 1;
+		int n2 = r - q;
+		int[] L = new int[0];
+		int[] R = new int[0];
+
+		for (int i = 1; i < n1; i++) { /*Might be i < n1 instead*/
+			L[i] = array[p + i -1];
+		}
+		for (int j = 1; j <= n2; j++) {
+			R[j] = array[q + j];
+		}
+
+		L[n1] = Integer.MAX_VALUE; /*Might be L[n1] instead*/
+		R[n2] = Integer.MAX_VALUE;
+
+		int i = 1;
+		int j = 1;
+
+		for (int k = p; k < r; k++) {
+			if (L[i] <= R[j]) {
+				array[k] = L[i];
+				i++;
+			} else if (array[k] == R[j]) {
+				j++;
+			}
+		}
+
 		return array;
 	}
 	
