@@ -20,14 +20,14 @@ public class Sort2 {
 		int[] L = new int[n1 + 1];
 		int[] R = new int[n2 + 1];
 
-		for (int i = 0; i < n1; i++) { /*Might be i < n1 instead*/
+		for (int i = 0; i < n1; i++) {
 			L[i] = array[p + i];
 		}
 		for (int j = 0; j < n2; j++) {
 			R[j] = array[q + j + 1];
 		}
 
-		L[n1] = Integer.MAX_VALUE; /*Might be L[n1] instead*/
+		L[n1] = Integer.MAX_VALUE;
 		R[n2] = Integer.MAX_VALUE;
 
 		int i = 0;
