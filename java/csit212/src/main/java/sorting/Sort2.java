@@ -32,14 +32,15 @@ public class Sort2 {
 		L[n1] = Integer.MAX_VALUE;
 		R[n2] = Integer.MAX_VALUE;
 
-		int i = 1;
-		int j = 1;
+		int i = 0;
+		int j = 0;
 
 		for (int k = p; k <= r; k++) {
-			if (L[i] < R[j]) {
+			if (L[i] <= R[j]) {
 				array[k] = L[i];
 				i++;
-			} else if (array[k] == R[j]) {
+			} else {
+				array[k] = R[j];
 				j++;
 			}
 		}
