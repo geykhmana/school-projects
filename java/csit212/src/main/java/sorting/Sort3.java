@@ -4,15 +4,38 @@ import java.util.*;
 
 public class Sort3 {
 	public static int[] quick_sort (int[] array, int p, int r) {
-		
+		int q;
+		if (p < r) {
+			q = partition(array, p, r);
+			quick_sort(array, p, q-1);
+			quick_sort(array, q+1, r);
+		}
+		return array;
 	}
 	
 	public static int partition (int[] array, int p, int r) {
-		
+		int x = array[r];
+		int i = p - 1;
+
+		for (int j = p; j < r; j++) {
+			if (array[j] <= x) {
+				i++;
+				int temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+		}
+
+		int temp2 = array[i + 1];
+		array[i + 1] = array[r];
+		array [r] = temp2;
+
+		return i + 1;
 	}
 	
 	public static int[] counting_sort (int[] array, int k) {
-		
+
+		return array;
 	}
 	
 	
