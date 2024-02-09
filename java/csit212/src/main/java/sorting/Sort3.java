@@ -33,7 +33,22 @@ public class Sort3 {
 		return i + 1;
 	}
 	
-	public static int[] counting_sort (int[] array, int k) {
+	public static int[] counting_sort (int[] array, int[] B, int k) {
+		int[] C = new int[k];
+
+		for (int i = 0; i < k; i++) {
+			C[i] = 0;
+		}
+		for (int j = 1; j < array.length; j++) {
+			C[array[j]] += 1;
+		}
+		for (int i = 1; i < k; i++) {
+			C[i] += C[i-1];
+		}
+		for (int j = array.length; j > 1; j--) {
+			B[C[array[j]]] = array[j];
+			C[array[j]] -= 1;
+		}
 
 		return array;
 	}
