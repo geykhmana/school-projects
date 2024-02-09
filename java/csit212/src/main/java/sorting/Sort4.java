@@ -5,28 +5,57 @@ import java.util.*;
 public class Sort4 {
 	
 	public static int left (int i) {
-		
+		return 2*i;
 	}
 	
 	public static int right (int i) {
-		
+		return 2*i + 1;
 	}
 	
 	public static int parent (int i) {
-		
+		return (int)java.lang.Math.floor(i/2);
 	}
 	
 	public static int[] max_heapify (int[] array, int heap_size, int i) {
-			
+		int l = left(i);
+		int r = right(i);
+		int largest = 0;
+
+		if (l <= heap_size && array[l] > array[i]) {
+			largest = l;
+		} else {
+			largest = i;
+		}
+		if (r < heap_size && array[r] > array[largest]) {
+			largest = r;
+		}
+		if (largest != i) {
+			int temp = array[i];
+			array[i] = array[largest];
+			array[largest] = temp;
+			max_heapify(array, array.length, largest);
+		}
+		return array;
 	}
 
 	
 	public static int[] build_heap (int[] array) {
-	
+		int heap_size = array.length;
+		for (int i = (int)java.lang.Math.floor(array.length/2); i > 1; i--) {
+			max_heapify(array, heap_size, i);
+		}
+		return array;
 	}
 	
 	public static int[] heap_sort (int[] array) {
-	
+		build_heap(array);
+
+		for (int i = array.length; i > 2; i--) {
+			int temp = array[1];
+			array[1] = array[i];
+			array[i] = temp;
+
+		}
 	}
 	
 	public static int[] quick_sort (int[] array, int p, int r) {
