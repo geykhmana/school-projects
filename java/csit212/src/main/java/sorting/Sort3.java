@@ -33,9 +33,9 @@ public class Sort3 {
 		return i + 1;
 	}
 	
-	public static int[] counting_sort (int[] array, int k) {
-		int[] C = new int[k];
-		int[] B = new int[0];
+	public static int[] counting_sort (int[] array, int[] B, int k) {
+		int[] C = new int[k+1];
+		//int[] B = new int[0];
 
 		for (int i = 0; i < k; i++) {
 			C[i] = 0;
@@ -43,10 +43,10 @@ public class Sort3 {
 		for (int j = 1; j < array.length; j++) {
 			C[array[j]] += 1;
 		}
-		for (int i = 1; i < k; i++) {
+		for (int i = 1; i <= k; i++) {
 			C[i] += C[i-1];
 		}
-		for (int j = array.length; j > 1; j--) {
+		for (int j = array.length-1; j > 1; j--) {
 			B[C[array[j]]] = array[j];
 			C[array[j]] -= 1;
 		}
@@ -125,12 +125,13 @@ public class Sort3 {
 			System.out.println(n + "," + t + "," + flag);
 		}
 		System.out.println("Quick sort ends ------------------");
-		
+
 		System.out.println("Counting sort starts ------------------");
 		for (int n = 100000; n <= 1000000; n=n+100000) {
 			int[] array = Sort3.generate_random_array(n, k);
 			long t1 = System.currentTimeMillis();
-			array = Sort3.counting_sort(array, k);
+			int[] B = new int[array.length];
+			array = Sort3.counting_sort(array, B, k);
 			long t2 = System.currentTimeMillis();
 			long t = t2 - t1;
 			boolean flag = Sort3.check_sorted(array);
