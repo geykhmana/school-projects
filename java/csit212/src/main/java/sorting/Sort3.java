@@ -35,20 +35,19 @@ public class Sort3 {
 	
 	public static int[] counting_sort (int[] array, int[] B, int k) {
 		int[] C = new int[k+1];
-		//int[] B = new int[0];
 
-		for (int i = 0; i < k; i++) {
+		for (int i = 0; i <= k; i++) {
 			C[i] = 0;
 		}
-		for (int j = 1; j < array.length; j++) {
-			C[array[j]] += 1;
+		for (int j = 0; j < array.length; j++) {
+			C[array[j]]++;
 		}
 		for (int i = 1; i <= k; i++) {
 			C[i] += C[i-1];
 		}
-		for (int j = array.length-1; j > 1; j--) {
-			B[C[array[j]]] = array[j];
-			C[array[j]] -= 1;
+		for (int j = array.length-1; j >= 0; j--) {
+			B[C[array[j]]-1] = array[j];
+			C[array[j]]--;
 		}
 
 		return array;
@@ -94,7 +93,7 @@ public class Sort3 {
 	
 	/*
 	 * Input: an integer array
-	 * Output: true if the array is acsendingly sorted, otherwise return false
+	 * Output: true if the array is ascendingly sorted, otherwise return false
 	 */
 	public static boolean check_sorted (int[] array) {
 		for (int i = 1; i < array.length; i++) {
