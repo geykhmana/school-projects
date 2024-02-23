@@ -21,14 +21,18 @@ public class Stack {
 	 * Implement the Stack-Empty(S) function
 	 */
 	public boolean empty () {
-		
+		if (top == 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	/*
 	 * Implement the Push(S, x) function
 	 */
 	public void push (int x) {
-		
+		top++;
 	}
 	
 	/*
@@ -36,7 +40,12 @@ public class Stack {
 	 * Return -1 if the stack is empty
 	 */
 	public int pop () {
-		
+		if (top == 0) {
+			return -1;
+		} else {
+			top--;
+			return array[top+1];
+		}
 	}
 	
 	/*
