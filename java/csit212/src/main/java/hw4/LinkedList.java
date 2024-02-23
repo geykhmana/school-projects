@@ -12,22 +12,44 @@ public class LinkedList {
 	 * Implement the LIST-SEARCH(L, k) function
 	 */
 	public ListNode search (int k) {
-		
+		ListNode x = head;
+
+		while (x != null && x.key != k) {
+			x = x.next;
+		}
+
+		return x;
 	}
 	
 	/*
 	 * Implement the LIST-INSERT(L, x) function
-	 * Note that x is a integer value, not a ListNode
+	 * Note that x is an integer value, not a ListNode
 	 */
 	public void insert (int x) {
-		
+		ListNode lnx = new ListNode(x);
+		lnx.next = head;
+
+		if (head != null) {
+			head.prev = lnx;
+		}
+
+		head = lnx;
+		lnx.prev = null;
 	}
 	
 	/*
 	 * Implement the LIST-DELETE(L, x) function
 	 */
 	public void delete (ListNode x) {
-		
+		if (x.prev != null) {
+			x.prev.next = x.next;
+		} else {
+			head = x.next;
+		}
+
+		if (x.next != null) {
+			x.next.prev = x.prev;
+		}
 	}
 	
 	/*
@@ -40,7 +62,7 @@ public class LinkedList {
 		str = "[";
 		x = this.head;
 		while (x != null) {
-			str += x.key + ",";
+			str += x.key + ", ";
 			x = x.next;
 		}
 		

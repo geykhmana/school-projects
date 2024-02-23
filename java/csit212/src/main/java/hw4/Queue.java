@@ -56,7 +56,7 @@ public class Queue {
 		
 		str = size + ", " + head + ", " + tail + ", [";
 		for (int i = head; i%size < tail; i++) 
-			str += array[i] + ",";
+			str += array[i] + ", ";
 		
 		str += "]";
 		return str;

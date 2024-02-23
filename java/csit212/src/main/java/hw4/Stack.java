@@ -33,6 +33,7 @@ public class Stack {
 	 */
 	public void push (int x) {
 		top++;
+		array[top] = x;
 	}
 	
 	/*
