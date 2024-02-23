@@ -25,11 +25,15 @@ public class Queue {
 	 * Implement the ENQUEUE(Q, x) function
 	 */
 	public void enqueue (int x) {
-		array[tail] = x;
-		if (tail == size) {
-			tail = 1;
+		if ((tail+1) % size == head) {
+			System.err.println("Error: Queue is full.");
 		} else {
-			tail++;
+			array[tail] = x;
+			if (tail == size - 1) {
+				tail = 0;
+			} else {
+				tail++;
+			}
 		}
 	}
 	
@@ -37,15 +41,19 @@ public class Queue {
 	 * Implement the DEQUEUE(Q) function
 	 */
 	public int dequeue () {
-		int x = array[head];
-
-		if (head == size) {
-			head = 1;
+		if (head == tail) {
+			System.err.println("Error: Queue is empty.");
+			return -1;
 		} else {
-			head++;
-		}
+			int x = array[head];
+			if (head == size - 1) {
+				head = 0;
+			} else {
+				head++;
+			}
 
-		return x;
+			return x;
+		}
 	}
 	
 	/*
