@@ -25,14 +25,27 @@ public class Queue {
 	 * Implement the ENQUEUE(Q, x) function
 	 */
 	public void enqueue (int x) {
-		
+		array[tail] = x;
+		if (tail == size) {
+			tail = 1;
+		} else {
+			tail++;
+		}
 	}
 	
 	/*
 	 * Implement the DEQUEUE(Q) function
 	 */
 	public int dequeue () {
-		
+		int x = array[head];
+
+		if (head == size) {
+			head = 1;
+		} else {
+			head++;
+		}
+
+		return x;
 	}
 	
 	/*
