@@ -32,8 +32,12 @@ public class Stack {
 	 * Implement the Push(S, x) function
 	 */
 	public void push (int x) {
-		top++;
-		array[top] = x;
+		if (top == size-1) {
+			System.err.println("Error: Could not push to the stack because it is already full");
+		} else {
+			top++;
+			array[top] = x;
+		}
 	}
 	
 	/*
@@ -41,7 +45,7 @@ public class Stack {
 	 * Return -1 if the stack is empty
 	 */
 	public int pop () {
-		if (top == 0) {
+		if (empty()) {
 			return -1;
 		} else {
 			top--;
