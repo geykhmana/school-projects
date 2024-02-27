@@ -1,4 +1,4 @@
-package ds;
+package hw5;
 
 public class BinarySearchTree {
 	public TreeNode root;
