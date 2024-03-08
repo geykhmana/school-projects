@@ -89,6 +89,23 @@ public class BinarySearchTree {
 			y.right = z;
 		}
 	}
+
+	/* Extra credit methods (Task 8) below */
+	public void preorder_tree_walk (TreeNode x) {
+		if (x != null) {
+			System.out.println(x.key);
+			preorder_tree_walk(x.left);
+			preorder_tree_walk(x.right);
+		}
+	}
+
+	public void postorder_tree_walk (TreeNode x) {
+		if (x != null) {
+			postorder_tree_walk(x.left);
+			postorder_tree_walk(x.right);
+			System.out.println(x.key);
+		}
+	}
 	
 	/**
 	 * @param args
@@ -136,6 +153,16 @@ public class BinarySearchTree {
 		n = bst.successor(bst.root.left.right.right);
 		System.out.println("Successor key is " + n.key);
 		System.out.println("Successor ends ------------------");
+		System.out.print("\n\n");
+
+		System.out.println("Preorder_tree_walk starts ------------------");
+		bst.preorder_tree_walk(bst.root);
+		System.out.println("Preorder_tree_walk ends ------------------");
+		System.out.print("\n\n");
+
+		System.out.println("Postorder_tree_walk starts ------------------");
+		bst.postorder_tree_walk(bst.root);
+		System.out.println("Postorder_tree_walk ends ------------------");
 		System.out.print("\n\n");
 	}
 
