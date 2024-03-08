@@ -26,7 +26,8 @@ public class BinarySearchTree {
 		}
 	}
 	
-	public TreeNode iterative_search (TreeNode x, int k) {
+	public TreeNode iterative_search (int k) {
+		TreeNode x = root;
 		while (x != null && k != x.key) {
 			if (k < x.key) {
 				x = x.left;
@@ -37,23 +38,25 @@ public class BinarySearchTree {
 		return x;
 	}
 	
-	public TreeNode minimum (TreeNode x) {
-		while (x.left != null) {
-			x = x.left;
+	public TreeNode minimum () {
+		while (root.left != null) {
+			root = root.left;
 		}
-		return x;
+		return root;
 	}
 	
-	public TreeNode maximum (TreeNode x) {
-		while (x.right != null) {
-			x = x.right;
+	public TreeNode maximum () {
+		while (root.right != null) {
+			root = root.right;
 		}
-		return x;
+		return root;
 	}
 	
 	public TreeNode successor (TreeNode x) {
+		BinarySearchTree tempTree = new BinarySearchTree();
 		if (x.right != null) {
-			return minimum(x.right);
+			tempTree.insert(x.right.key);
+			return tempTree.minimum();
 		}
 		TreeNode y = x.p;
 		while (y != null && x == y.right) {
@@ -64,7 +67,25 @@ public class BinarySearchTree {
 	}
 	
 	public void insert (int k) {
-		
+		TreeNode z = new TreeNode(k);
+		TreeNode y = null;
+		TreeNode x = root;
+		while (x != null) {
+			y = x;
+			if (z.key < x.key) {
+				x = x.left;
+			} else {
+				x = x.right;
+			}
+		}
+		z.p = y;
+		if (y == null) {
+			root = z;
+		} else if (z.key < y.key) {
+			y.left = z;
+		} else {
+			y.right = z;
+		}
 	}
 	
 	/**
