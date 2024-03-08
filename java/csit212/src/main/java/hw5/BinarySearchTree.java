@@ -39,17 +39,19 @@ public class BinarySearchTree {
 	}
 	
 	public TreeNode minimum () {
-		while (root.left != null) {
-			root = root.left;
+		TreeNode x = root;
+		while (x.left != null) {
+			x = x.left;
 		}
-		return root;
+		return x;
 	}
 	
 	public TreeNode maximum () {
-		while (root.right != null) {
-			root = root.right;
+		TreeNode x = root;
+		while (x.right != null) {
+			x = x.right;
 		}
-		return root;
+		return x;
 	}
 	
 	public TreeNode successor (TreeNode x) {
