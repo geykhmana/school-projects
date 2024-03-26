@@ -6,7 +6,7 @@ public class LCS {
 		int m = X.length();
 		int n = Y.length();
 
-		int[] b = new int[m];
+		int[][] b = new int[m][n];
 		int[][] c = new int[m + 1][n + 1];
 
 		for (int i = 1; i < m+1; i++) {
