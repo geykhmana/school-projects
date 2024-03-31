@@ -23,21 +23,63 @@ public class RodCut {
 	}
 	
 	public int memoized_cut_rod () {
-    
-      
+    	int[] r = new int[n+1];
+
+		for (int i=0; i <= n; i++) {
+			r[i] = Integer.MIN_VALUE;
+		}
+
+		return memoized_cut_rod_aux(p, n, r);
 	}
 	
 	public int memoized_cut_rod_aux (int p[], int n, int r[]) {
-   
+   		int q;
+		if (r[n] >= 0) {
+			   return r[n];
+		}
+	   if (n == 0) {
+		   q = 0;
+	   } else {
+		   q = Integer.MIN_VALUE;
+		   for (int i = 1; i <= n; i++) {
+			   q = Math.max(q, p[i] + memoized_cut_rod_aux(p, n-i, r));
+		   }
+	   }
+
+	   r[n] = q;
+	   return q;
 	}
 	
 	public int bottom_up_cut_rod () {
- 
-					
+		int[] r = new int[n+1];
+		 r[0] = 0;
+
+		 for (int j = 1; j <= n; j++) {
+			 int q = Integer.MIN_VALUE;
+			 for (int i = 1; i <= j; i++) {
+				 q = Math.max(q, p[i] + r[j-i]);
+			 }
+			 r[j] = q;
+		 }
+		 return r[n];
 	}
 	
 	public void extended_bottom_up_cut_rod () {
-   
+		int[] r = new int [n+1];
+		int[] s = new int [n+1];
+		r[0] = 0;
+		for (int j = 1; j <= n; j++) {
+			int q = Integer.MIN_VALUE;
+			for (int i = 1; i <= j; i++) {
+				if (q < p[i] + r[j - i]) {
+					q = p[i] + r[j - i];
+					s[j] = i;
+				}
+			}
+			r[j] = q;
+		}
+		this.r = r;
+		this.s = s;
 	}
 	
 	public void print_cut_rod_solution () {
