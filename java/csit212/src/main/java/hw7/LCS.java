@@ -1,4 +1,4 @@
-package lcs;
+package hw7;
 
 public class LCS {
 	
