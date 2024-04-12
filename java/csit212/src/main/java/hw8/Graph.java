@@ -36,7 +36,7 @@ public class Graph {
 		Q.enqueue(s);
 		while (Q != null) {
 			int u = Q.dequeue();
-			for (int v = 0; v < this.A[u][u]; v++) {
+			for (int v = 0; v < n; v++) {
 				if (color[v] == WHITE) {
 					color[v] = GRAY;
 					d[v] = d[u] + 1;
