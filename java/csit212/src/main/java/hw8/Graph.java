@@ -26,7 +26,7 @@ public class Graph {
 	public int[] bfs (int s) {
 		int[] color = new int[n];
 		int[] d = new int[n];
-		for (int u = 0; u < this.n; u++) {
+		for (int u = 0; u < n; u++) {
 			color[u] = WHITE;
 			d[u] = Integer.MAX_VALUE;
 		}
