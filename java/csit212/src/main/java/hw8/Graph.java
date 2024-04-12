@@ -25,19 +25,18 @@ public class Graph {
 	 */
 	public int[] bfs (int s) {
 		int[] color = new int[n];
-		int[] d = new int[s];
-		Queue Q;
-		for (int u = 0; u <= this.n; u++) {
+		int[] d = new int[n];
+		for (int u = 0; u < this.n; u++) {
 			color[u] = WHITE;
 			d[u] = Integer.MAX_VALUE;
 		}
 		color[s] = GRAY;
 		d[s] = 0;
-		Q = null;
+		Queue Q = new Queue(n);
 		Q.enqueue(s);
 		while (Q != null) {
 			int u = Q.dequeue();
-			for (int v = 0; v <= this.A[u][u]; v++) {
+			for (int v = 0; v < this.A[u][u]; v++) {
 				if (color[v] == WHITE) {
 					color[v] = GRAY;
 					d[v] = d[u] + 1;
