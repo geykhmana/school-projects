@@ -53,6 +53,42 @@ public class Graph {
 		for (int i = 0; i < array.length; i++)
 			System.out.println(i + ": " + array[i]);
 	}
+
+	/*Extra Credit*/
+	public void dfs () {
+		int[] color = new int[n];
+		int[] d = new int[n];
+		int[] f = new int[n];
+		for (int u = 0; u < n; u++) {
+			color[u] = WHITE;
+		}
+		int time = 0;
+		for (int u = 0; u < n; u++) {
+			if (color[u] == WHITE) {
+				dfs_visit(u, time, color, d, f);
+			}
+		}
+	}
+
+	public void dfs_visit(int u, int time, int[] color, int[] d, int[] f) {
+		time++;
+		d[u] = time;
+		color[u] = GRAY;
+		for (int v = 0; v < n; v++) {
+			if (color[v] == WHITE) {
+				dfs_visit(v, time, color, d, f);
+			}
+		}
+		color[u] = BLACK;
+		time++;
+		f[u] = time;
+		for (int i = 0; i < f.length; i++) {
+			System.out.println(f[i]);
+		}
+	}
+	/*
+	End of extra credit
+	* */
 	
 	/**
 	 * @param args
@@ -71,6 +107,7 @@ public class Graph {
 			{0, 0, 0, 1, 0, 0, 1, 0}};
 		Graph g = new Graph(n, A);
 		g.print_array(g.bfs(1));
+		g.dfs();
 	}
 
 }
