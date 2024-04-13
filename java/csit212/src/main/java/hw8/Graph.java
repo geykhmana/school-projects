@@ -1,6 +1,7 @@
 package hw8;
 
 import hw4.Queue;
+import java.util.LinkedList;
 
 public class Graph {
 	public int n;	//number of vertices
