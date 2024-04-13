@@ -1,6 +1,6 @@
 package hw8;
 
-import hw4.Queue;
+import java.util.Queue;
 import java.util.LinkedList;
 
 public class Graph {
@@ -33,7 +33,7 @@ public class Graph {
 		}
 		color[s] = GRAY;
 		d[s] = 0;
-		Queue Q = new LinkedList<Integer>();
+		Queue<Integer> Q = new LinkedList<Integer>();
 		Q.add(s);
 		while (!Q.isEmpty()) {
 			int u = Q.poll();
