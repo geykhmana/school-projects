@@ -32,15 +32,15 @@ public class Graph {
 		}
 		color[s] = GRAY;
 		d[s] = 0;
-		Queue Q = new Queue(n);
-		Q.enqueue(s);
-		while (Q != null) {
-			int u = Q.dequeue();
+		Queue Q = new LinkedList<Integer>();
+		Q.add(s);
+		while (!Q.isEmpty()) {
+			int u = Q.poll();
 			for (int v = 0; v < n; v++) {
-				if (color[v] == WHITE) {
+				if (A[u][v] == 1 && color[v] == WHITE) {
 					color[v] = GRAY;
 					d[v] = d[u] + 1;
-					Q.enqueue(v);
+					Q.add(v);
 				}
 			}
 			color[u] = BLACK;
