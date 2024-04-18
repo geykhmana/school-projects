@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Graph2 {
 	
-	public int n;	//number of vertice
+	public int n;	//number of vertices
 	public int[][] A;	//the adjacency matrix
 	
 	public Graph2 () {
@@ -17,7 +17,32 @@ public class Graph2 {
 	}
 	
 	public int prim (int r) {
-		
+		int[] key = new int[n];
+		int[] parent = new int[n];
+		for (int u = 0; u < n-1; u++) {
+			key[u] = Integer.MAX_VALUE;
+			parent[u] = -1;
+		}
+		key[r] = 0;
+		Queue<Integer> Q = new PriorityQueue<>(n);
+		Q.add(r);
+		while (!Q.isEmpty()) {
+			int u = Q.poll();
+			for (int v = 0; v < A[u][v]; v++) {
+				if (A[u][v] != 0 && A[u][v] < key[v]) {
+					parent[v] = u;
+					key[v] = A[u][v];
+				}
+			}
+		}
+		int totalWeight = 0;
+		for (int i = 0; i < n; i++) {
+			if (parent[i] != -1) {
+				totalWeight += A[i][parent[i]];
+			}
+		}
+
+		return totalWeight;
 	}
 
 	/**
