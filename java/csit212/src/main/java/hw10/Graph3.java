@@ -1,10 +1,6 @@
 package hw10;
 
-import hw9.PrimNode;
-
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
 public class Graph3 {
 	int n;
@@ -37,15 +33,18 @@ public class Graph3 {
 	
 	public boolean bellman_ford (int s) {
 		initialize_single_source(s);
-		int[] e;
-		for (int i = 1; i < n-1; i++) {
-			for (int j = 1; j < n-1; j++) {
-				relax(i, j);
+		for (int i = 1; i <= n-1; i++) {
+			for (int u = 0; u < n; u++) {
+				for (int v = 0; v < n; v++) {
+					if (A[u][v] != 0) {
+						relax(u, v);
+					}
+				}
 			}
 		}
-		for (int u = 1; u < n-1; u++) {
-			for (int v = 1; v < n-1; v++) {
-				if (d[v] > d[u] + A[u][v]) {
+		for (int u = 0; u < n; u++) {
+			for (int v = 0; v < n; v++) {
+				if (A[u][v] != 0 && d[v] > d[u] + A[u][v]) {
 					return false;
 				}
 			}
@@ -55,14 +54,16 @@ public class Graph3 {
 	
 	public void dijkstra (int s) {
 		initialize_single_source(s);
-		Queue<Integer> S = new LinkedList<>();
-		Queue<Integer> Q = new LinkedList<Integer>();
+		Set<Integer> S = new HashSet<>();
+		Queue<Integer> Q = new LinkedList<>();
 		Q.add(s);
 		while (!Q.isEmpty()) {
 			int u = Q.poll();
 			for (int v = 0; v < n; v++) {
-
-				relax(u, v);
+				if (S.contains(u)) {
+					relax(u, v);
+				}
+				S.add(u);
 			}
 		}
 	}
