@@ -17,7 +17,18 @@ try:
 
         try:
             message = connectionSocket.recv(1024).decode()
-            filename = message.split()[1]
+
+            if not message.strip():
+                connectionSocket.close()
+                continue
+
+            request_parts = message.split()
+            if len(request_parts) < 2:
+                connectionSocket.send("HTTP/1.1 400 Bad Request\r\n\r\n".encode())
+                connectionSocket.close()
+                continue
+
+            filename = request_parts[1]
             f = open(filename[1:], 'r')
             outputdata = f.read()
             f.close()
@@ -35,7 +46,7 @@ try:
         except IOError:
             #Send response message for file not found
             connectionSocket.send("HTTP/1.1 404 Not Found\r\n\r\n".encode())
-            connectionSocket.send("<html><body><h1>404 – Not Found</h1></body></html>".encode())
+            connectionSocket.send("<html><body><h1>404 - Not Found</h1></body></html>".encode())
 
             #Close client socket
             connectionSocket.close()
