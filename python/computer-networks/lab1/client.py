@@ -5,7 +5,7 @@ host = sys.argv[1]
 port = int(sys.argv[2])
 filename = sys.argv[3]
 
-connection = http.client.HTTPSConnection(host, port)
+connection = http.client.HTTPConnection(host, port)
 connection.request("GET", filename)
 response = connection.getresponse()
 
