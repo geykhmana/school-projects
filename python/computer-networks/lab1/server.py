@@ -29,12 +29,15 @@ try:
                 continue
 
             filename = request_parts[1]
-            f = open(filename[1:], 'r')
+            filepath = filename.lstrip('/')
+            
+            f = open(filepath, 'r')
             outputdata = f.read()
             f.close()
 
-            #Send 1 HTTP header line into socket
-            connectionSocket.send("HTTP/1.1 200 OK\r\n\r\n".encode())
+            #Send 2 HTTP header lines into socket
+            connectionSocket.send("HTTP/1.1 200 OK\r\n".encode())
+            connectionSocket.send("Content-Type: text/html\r\n\r\n".encode()) #Explicitly tells the browser that the file is HTML, I had issues without this line
 
             #Send the content of the requested file to the client
             for i in range(0, len(outputdata)):
