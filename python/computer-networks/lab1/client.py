@@ -10,6 +10,6 @@ connection.request("GET", filename)
 response = connection.getresponse()
 
 print(f"Status: {response.status}, Reason: {response.reason}")
-print(response.read().decode)
+print(response.read().decode())
 
 connection.close
