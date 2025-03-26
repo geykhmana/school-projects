@@ -12,4 +12,4 @@ if __name__ == "__main__":
 
     d = distance(x1, x2, y1, y2)
 
-    print("The distance between the points is: " + str(d))
+    print("\nThe distance between the points is: " + str(d))
