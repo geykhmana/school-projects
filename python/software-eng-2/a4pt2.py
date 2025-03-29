@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     a = area(x)
 
-    print("\nThe area of the square is:", a)
+    print("\nThe area of the square is:", a) # Expected answer: 16
 
     x = 0
 
@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     a = area(x)
 
-    print("\nThe area of the square is:", a)
+    print("\nThe area of the square is:", a) # Expected answer: 0
 
     x = -1
 
@@ -26,4 +26,4 @@ if __name__ == "__main__":
 
     a = area(x)
 
-    print("\nThe area of the square is:", a)
+    print("\nThe area of the square is:", a) # Expected answer: 1

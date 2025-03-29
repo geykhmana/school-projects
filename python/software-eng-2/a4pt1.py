@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     d = distance(x1, x2, y1, y2)
 
-    print("\nThe distance between the points is:", d)
+    print("\nThe distance between the points is:", d) # Expected answer: 2.23606797749979
 
     x1 = 1
     y1 = 1
@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     d = distance(x1, x2, y1, y2)
 
-    print("\nThe distance between the points is:", d)
+    print("\nThe distance between the points is:", d)  # Expected answer: 0
 
     x1 = 7
     y1 = 8
@@ -35,4 +35,4 @@ if __name__ == "__main__":
 
     d = distance(x1, x2, y1, y2)
 
-    print("\nThe distance between the points is:", d)
+    print("\nThe distance between the points is:", d)  # Expected answer: 2.23606797749979
