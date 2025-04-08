@@ -1,0 +1,2 @@
+(DEFUN AREA-OF-SQUARE (SIDE)
+    (* SIDE SIDE))
